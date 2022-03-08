@@ -1,38 +1,479 @@
-.App {
-  text-align: center;
+div{
+  margin: 0px;
+  padding: 0px;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+p{
+  margin: 0px;
+  padding: 0px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.navbar_container{
+  display: flex;
+  height: 80px;
+  justify-content: space-between;
+  box-shadow: 15px 0px 15px -10px rgba(0,0,0,0.75);
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.dropdown_selection{
+  display: none;
+}
+.selection{
+  width: 50vw;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.selection div p{
+  font-weight: 700;
+  font-size: smaller;
+  color: #282c3f;
+}
+.myntra_logo{
+  height: 45px;
+  width: 40px;
+}
+.myntra_logo img{
+  height: inherit;
+  width: inherit;
+}
+#new_tag{
+  position: absolute;
+  top: -6px;
+  left: 53px;
+  color: red;
+  font-size: x-small;
+}
+.personal{
+  width: 45vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.search{
+  width: 60%;
+}
+.search_icon{
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  color: darkgray;
+}
+.dropdown_profile{
+  display: none;
+}
+.profile{
+  width: 35%;
+}
+.search input{
+  width: 100%;
+  height: 35px;
+  width: 88%;
+  padding-left: 40px;
+  border: none;
+  outline: none;
+  background-color: #f0f0f0;
+}
+.pos_relative{
+  position: relative;
+}
+.profile{
+  display: flex;
+  justify-content: space-evenly;
+  height: 40px;
+}
+.profile div{
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   align-items: center;
+  cursor: pointer;
+}
+.profile .title{
+  font-size: smaller;
+}
+.profile_list div:hover{
+  background-color: blue;
+  cursor: pointer;
+}
+@media screen and (max-width: 1308px){
+  .item_container{
+    width: 21% !important;
+  }
+}
+@media screen and (max-width: 1000px){
+  .selection {
+    width: 60vw;
+  }
+  .personal {
+    width: 35vw;
+  }
+  .search {
+    width: 40%;
+  }
+  .profile {
+    width: 50%;
+  }
+  .filter_container{
+    display:none;
+  }
+}
+
+@media screen and (max-width: 900px){
+  .item_container{
+    width: 30% !important;
+  }
+}
+@media screen and (max-width: 800px){
+  .navbar_container{
+    justify-content: center;
+  }
+  .selection{
+    display: none;
+  }
+  .dropdown_selection{
+    /* position: fixed;
+    left: 50px;
+    display: flex;
+    flex-direction: column;
+    top: 25px;
+    font-size: xx-large; */
+    display: flex;
+      position: absolute;
+      height: 30px;
+      width: 30px;
+      top: 16px;
+      left: 33px;
+  }
+  .profile{
+    display: none;
+  }
+  .dropdown_profile{
+    display: flex;
+    flex-direction: column;
+    font-size: xx-large;
+    position: absolute;
+    top: 23px;
+    right: 7%;
+  }
+  .personal{
+    width: 65vw;
+  }
+  .search{
+    width: 100%;
+  }
+  .selection_list{
+    margin-top: 25px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    margin-left: -20px;
+  }
+  .selection_list div p{
+    border-bottom: 1px solid gray;
+    font-size: 25px;
+  }
+  .profile_list{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 85px;
+    right: 10px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    height: 158px;
+    height: 60px;
+  }
+  .profile_list div{
+    display: flex;
+    font-size: medium;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    
+  }
+  .profile_list{
+    height: 65px;
+  }
+  .zoomImage_container{
+    width: 84vw !important;
+  }
+  .zoomImage{
+    width: 42vw !important;
+  }
+  .cancel_btn{
+    font-size: larger !important;
+  }
+}
+
+@media screen and (max-width: 713px){
+  .item_container{
+    width: 40% !important;
+    margin: 0px 20px;
+  }
+  .sort_container{
+    margin-top: 10px;
+  }
+  .sort{
+    margin-right: 25px !important;
+  }
+  .sort_btn{
+    font-size: smaller;
+    font-weight: 600;
+  }
+}
+@media screen and (max-width: 619px){
+  .item_container{
+    width: 50% !important;
+    margin: 0px 20px;
+    margin-left: 20%;
+  }
+}
+@media screen and (max-width:600px){
+  .zoomImage_container{
+    width: 94vw !important;
+  }
+  .zoomImage{
+    width: 47vw !important;
+  }
+}
+@media screen and (max-width: 400px){
+  .navbar_container{
+    height: 70px;
+  }
+  .search{
+    width: 85%;
+  }
+  .search input{
+    height: 28px;
+  }
+  .dropdown_selection{
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    top: 16px;
+    left: 15px;
+  }
+  .myntra_logo{
+    height: 35px;
+    width: 35px;
+  }
+  .dropdown_profile{
+    position: absolute;
+    top: 18px;
+    right: 7%;
+  }
+  .sort_container{
+    height: 30px !important;
+    margin-top: 10px !important;
+  }
+  .sort{
+    margin-right: 25px !important;
+  }
+  .sort_btn{
+    padding: 3px 5px !important;
+    font-size: small !important;
+  }
+  .item_container{
+    width: 70% !important;
+    margin-right: 10% !important;
+  }
+}
+@media screen and (max-width:500px){
+  .zoomImage{
+    width: 93vw !important;
+  }
+}
+.products_list{
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+.item_container{
+  height: 300px;
+    width: 200px;
+    padding: 10px;
+}
+.item_image{
+  height: 70%;
+  width: 100%;
+  position: relative;
+}
+.item_image:hover > img{
+  height: 90%;
+}
+.item_image:hover .wishlistOption{
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+}
+.item_image:hover .wishlistOption p{
+  border: 1px solid gray;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    color: gray;
+    cursor: pointer;
+}
+.item_image img{
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+}
+.wishlistOption{
+  display: none;
+  
+}
+.view_similar{
+  position: absolute;
+  top: 160px;
+  left: 42px;
+  width: 100px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  font-size: larger;
+  background-color: lightgray;
+  color: red;
+  
+}
+.item_image:hover > .view_similar{
+  display: flex;
+  cursor: pointer;
+}
+.item_details{
+  padding-left: 6px;
+}
+.item_name p{
+  font-size: 16px;
+}
+.item_desc p{
+  font-size: 15px;
+  color: grey;
+}
+.item_price p{
+  font-size: 14px;
 }
 
-.App-link {
-  color: #61dafb;
+.sort{
+    display: flex;
+    margin-right: 40px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.sort_btn{
+  padding: 5px 10px;
+  background-color: lightcoral;
+  margin-right: 10px;
+  cursor:pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sort_container{
+  width: 100%;
+  height: 40px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: end;
+}
+.filter{
+  padding: 10px 5px;
+  margin-left: 20px;
+  background-color: lightgreen;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: x-large;
+  cursor: pointer;
+}
+.remove_btn{
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* padding: 10px; */
+  font-size: large;
+  cursor: pointer;
+}
+.main_body{
+  display: flex;
+  border-top: 1px solid lightgray;
+  margin-top: 5px;
+}
+.filter_container{
+  width: 25%;
+  padding-left: 10px;
+  border-right: 1px solid gray;
+  max-width: 179px;
+  min-width:179px;
+}
+.category_container{
+  border-bottom: 1px solid gray;
+  padding: 20px 10px;
+}
+.category_title{
+  margin-bottom: 5px;
+}
+.filter_title{
+  font-size: x-large;
+  font-weight: 500;
+  margin-left: 30px;
+}
+.filter_btn{
+  width: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 40px;
+  margin-top: 30px;
+  padding: 0px 10px;
+  font-size: x-large;
+  background-color: #bdbdbd;
+  color: blue;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.zoomImage_container{
+  position: absolute;
+  height: 63vh;
+  width: 70vw;
+}
+.zoomImage{
+  height: 63vh;
+  width: 35vw;
+}
+.cancel_btn{
+    font-size: larger;
+    font-weight: 700;
+    cursor: pointer;
+    position: absolute;
+    z-index: 1;
+    background-color: red;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 10px;
+    top: -48px;
+}
+.no_products{
+  height: 60vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: jus;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.no_products_title{
+  font-size: x-large;
+  margin-bottom: 25px
+}
+.no_products_btn{
+  background-color: blue;
+    font-size: x-large;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    padding: 5px 10px;
+    color: wheat;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
 }
